@@ -69,6 +69,7 @@ namespace PayRate_Console_
                     // If yes, break from this 'while' loop to re-enter previous 'while' loop
                     if (response.Equals("y"))
                     {
+                        Console.Clear();
                         break;
                     }
                     // If no, exit program completely
