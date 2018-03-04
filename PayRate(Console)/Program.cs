@@ -60,9 +60,6 @@ namespace PayRate_Console_
                 Console.Out.WriteLine("\nYour paycheck for the week will be (approx): " +
                             result.ToString("C"));
                 
-                // Boolean variable for second loop
-                Boolean loop2 = true;
-
                 do
                 {
                     // Continue or end the loop via user input
@@ -77,7 +74,6 @@ namespace PayRate_Console_
                     // If no, exit program completely
                     else if (response.Equals("n"))
                     {
-                        loop2 = false;
                         loop = false;
                     }
                     // If anything other than yes or no, repeat the question
@@ -86,7 +82,7 @@ namespace PayRate_Console_
                         Console.WriteLine("Please enter y or n.");
                         continue;
                     }
-                } while (loop2 == true);
+                } while (loop == true);
 
             } while (loop == true);
         }
