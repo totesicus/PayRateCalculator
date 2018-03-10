@@ -4,32 +4,31 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PayRate_Console_
-{
-    class Program
-    {
-        static void Main(string[] args)
-        {
+namespace PayRate_Console_ {
+    class Program {
+        static void Main(string[] args) {
             // String variables for user input
-            String hoursIn, payRateIn, taxIn, response;
+            var hoursIn = "";
+            var payRateIn = "";
+            var taxIn = "";
+            var response = "";
 
             // Double variables for parsed String output
             double hours, payRate, payRateResult, tax, taxResult, result;
 
             // Boolean variable for loop set to true
-            Boolean loop = true;
-            
+            bool loop = true;
+
             Test test = new Test();
 
-            do
-            {   
+            do {
                 // Greet the user
                 Console.Out.WriteLine("Welcome!\n");
 
                 // Take user input in String format 
-                Console.Out.WriteLine("Hours worked:");           
+                Console.Out.WriteLine("Hours worked:");
                 hoursIn = Console.ReadLine();
-                
+
                 test.InputTest(hoursIn);
 
                 // Parse to type double
@@ -59,47 +58,34 @@ namespace PayRate_Console_
                 // Output approximate pay in currency format
                 Console.Out.WriteLine("\nYour paycheck for the week will be (approx): " +
                             result.ToString("C"));
-                
-                // Boolean variable for second loop
-                Boolean loop2 = true;
 
-                do
-                {
+                do {
                     // Continue or end the loop via user input
                     Console.Out.WriteLine("Make another calculation? (y/n)");
                     response = Console.ReadLine();
 
                     // If yes, break from this 'while' loop to re-enter previous 'while' loop
-                    if (response.Equals("y"))
-                    {
+                    if (response.Equals("y")) {
+                        Console.Clear();
                         break;
                     }
                     // If no, exit program completely
-                    else if (response.Equals("n"))
-                    {
-                        loop2 = false;
+                    else if (response.Equals("n")) {
                         loop = false;
                     }
                     // If anything other than yes or no, repeat the question
-                    else
-                    {
+                    else {
                         Console.WriteLine("Please enter y or n.");
                         continue;
                     }
-                } while (loop2 == true);
+                } while (loop == true);
 
             } while (loop == true);
         }
     }
 }
 
-class Test
-    {
-        public void InputTest(string str)
-        {
-            if (str.Equals(""))
-            {
-                Console.Out.WriteLine("Please enter a numeric value.");
-            }
-        }
-    }
+class Test {
+    public void InputTest(string str) { }
+
+}
